@@ -33,6 +33,9 @@ var config = {
       },
     ],
   },
+  externals: {
+       "jquery": "jQuery"
+   },
   watch: true,
   quiet: true,
 };
