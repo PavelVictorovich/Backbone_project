@@ -1,5 +1,5 @@
 {
-  "name": "taskloader",
+  "name": "Backbone-first",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -28,11 +28,13 @@
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^7.0.0",
     "file-loader": "^0.8.5",
-    "jquery": "^2.2.3",
+    "html-loader": "^0.4.3",
     "lodash": "^4.11.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.0", 
+    "webpack": "^1.13.0"
+  },
+  "devDependencies": {
     "webpack-dev-server": "^1.14.1"
   }
 }

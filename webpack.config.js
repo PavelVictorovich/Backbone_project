@@ -1,13 +1,13 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = {
-  // context: __dirname + "/app",
+var path = require("path");
+module.exports ={
+  //context: __dirname + "/dist",
   devtool: 'inline-source-map',
   entry: ['babel-polyfill', './src/index'],
   output: {
-    path: `${__dirname}/dist`,
-    publicPath: '/src/',
+    //path: `${__dirname}/dist/`,
+    path: path.resolve(__dirname, "dist"),
     filename: 'bundle.js',
+
   },
   module: {
     loaders: [
@@ -20,29 +20,18 @@ var config = {
         },
       },
       {
-        test: /\.(gif|png)$/,
-        loader: 'url?limit=1000',
+          test: /\.html/,
+          loader: 'html',
       },
       {
         test: /\.css$/,
         loader: 'style!css?modules',
       },
-      {
-        test: /\.html$/,
-        loader: 'raw',
-      },
     ],
   },
+  watch: true,
   externals: {
        "jquery": "jQuery"
    },
-  watch: true,
-  quiet: true,
+
 };
-module.exports = config;
-var devServer = new WebpackDevServer(
-    webpack(config),
-    {
-      contentBase: `${__dirname}/dist`,
-    }
-).listen(3000, 'localhost');
